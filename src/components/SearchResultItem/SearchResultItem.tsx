@@ -1,15 +1,20 @@
 import s from './SearchResultItem.module.css'
+import {dateFormatter} from "../../utils/utils.ts"
 
-export const SearchResultItem = () => {
+export const SearchResultItem = (props: any) => {
+  const {name, status, created} = props.character
+
+
   return (
     <div className={s.wrapper}>
-      <h3 className={s.title}>Stair Goblin - Mythological Creature</h3>
+      <h3 className={s.title}>{name}</h3>
       <div className={s.info}>
-        <p>Status: <span>Dead</span></p>
-        <p>Created: 04.11.2017</p>
+        <p>Status: <span>{status}</span></p>
+        <p>Created: {dateFormatter(created)}</p>
       </div>
 
     </div>
   )
+
 
 }
