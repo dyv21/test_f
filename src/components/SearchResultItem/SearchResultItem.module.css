@@ -9,6 +9,8 @@
   box-shadow: 0 4px 7px rgba(101, 110, 194, 0.2);
   padding: 1rem;
   box-sizing: border-box;
+  color: inherit;
+  text-decoration: none;
 
   &:nth-child(1),
   &:nth-child(2) {

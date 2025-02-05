@@ -1,20 +1,30 @@
 import s from './SearchResultItem.module.css'
 import {dateFormatter} from "../../utils/utils.ts"
 
-export const SearchResultItem = (props: any) => {
-  const {name, status, created} = props.character
+type SearchResultItemPropsType = {
+  character: {
+    name: string
+    status: string
+    created: string
+    url: string
+  }
+}
+
+export const SearchResultItem = (props: SearchResultItemPropsType) => {
+  const {name, status, created, url} = props.character
 
 
   return (
-    <div className={s.wrapper}>
+
+    <a className={s.wrapper} href={url}>
       <h3 className={s.title}>{name}</h3>
       <div className={s.info}>
         <p>Status: <span className={s[status.toLowerCase()]}>{status}</span></p>
         <p>Created: {dateFormatter(created)}</p>
       </div>
+    </a>
 
-    </div>
+
+
   )
-
-
 }
