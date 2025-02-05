@@ -1,0 +1,18 @@
+.wrapper {
+  display: flex;
+  justify-content: center;
+  margin: 4rem 0;
+}
+
+.input {
+  width: 40%;
+  max-width: 624px;
+  height: 100%;
+  max-height: 64px;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #656EC2;
+  border: none;
+  box-shadow: 0 3px 5px rgba(101, 110, 194, 0.2);
+  padding: 0.5rem 2rem;
+}
