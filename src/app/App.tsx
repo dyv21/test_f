@@ -7,18 +7,22 @@ import {useState} from "react"
 
 function App() {
   const [characters, setCharacters] = useState([])
+  const [error, setError] = useState([])
+  const [totalCount, setTotalCount] = useState(0)
 
-
+  console.log(characters)
   const sendQuery = () => {
-    API.getCharactersByName().then( res => {
-
-      setCharacters(res.data.results)
-    })
+    API.getCharactersByName()
+      .then(res => {
+        setCharacters(res.data.results)
+        setTotalCount(res.data.info.count)
+      })
+      .catch(err => setError(err))
   }
 
   return (
     <>
-      <SearchInput sendQuery={sendQuery}/>
+      <SearchInput sendQuery={sendQuery} totalCount={totalCount}/>
       <SearchResult characters={characters}/>
     </>
   )

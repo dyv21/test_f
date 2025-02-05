@@ -3,10 +3,11 @@ import {useState} from "react"
 
 type PropsType = {
   sendQuery: () => void
+  totalCount: number
 }
 
 export const SearchInput = (props: PropsType) => {
-  const {sendQuery} = props
+  const {sendQuery, totalCount} = props
   const [find, setFind] = useState('Search characters...')
 
 
@@ -26,8 +27,8 @@ export const SearchInput = (props: PropsType) => {
       <div className={s.form}>
         <label htmlFor="search-form">Search form</label>
         <input id={"search-form"} className={s.input} type="text" value={find}
-               onChange={onChangeHandler} onFocus={() => setFind("") } onKeyUp={onKeyUpHandler}/>
-        <span>Found characters: 8</span>
+               onChange={onChangeHandler} onFocus={() => setFind("")} onKeyUp={onKeyUpHandler}/>
+        {totalCount !== 0 && <span>Found characters: {totalCount}</span>}
       </div>
     </header>
   )
