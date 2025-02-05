@@ -1,0 +1,12 @@
+.wrapper {
+
+  min-width: 250px;
+  min-height: 200px;
+  box-shadow: 0 4px 7px rgba(101, 110, 194, 0.2);
+  flex-basis: calc(33.333% - 1rem);
+
+  &:nth-child(1),
+  &:nth-child(2) {
+    flex-basis: calc(50% - 1rem);;
+  }
+}
