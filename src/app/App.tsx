@@ -7,10 +7,9 @@ import {useState} from "react"
 
 function App() {
   const [characters, setCharacters] = useState([])
-  const [error, setError] = useState([])
+  const [error, setError] = useState(null)
   const [totalCount, setTotalCount] = useState(0)
 
-  console.log(characters)
   const sendQuery = () => {
     API.getCharactersByName()
       .then(res => {
