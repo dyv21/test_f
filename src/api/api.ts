@@ -5,5 +5,5 @@ export const instance = axios.create({
 })
 
 export const API = {
-  getCharactersByName: () => instance.get(`character/`)
+  getCharactersByName: (name: string) => instance.get(`character?name=${name}`)
 }

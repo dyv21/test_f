@@ -1,7 +1,7 @@
 import s from './SearchResultItem.module.css'
 import {dateFormatter} from "../../utils/utils.ts"
 
-type SearchResultItemPropsType = {
+export type SearchResultItemPropsType = {
   character: {
     name: string
     status: string

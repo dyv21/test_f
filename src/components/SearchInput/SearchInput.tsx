@@ -2,20 +2,22 @@ import s from './SearchInput.module.css'
 import {useState} from "react"
 
 type PropsType = {
-  sendQuery: () => void
-  totalCount: number
+  sendQuery: (name:string) => void
+  totalCount: number | null
 }
 
 export const SearchInput = (props: PropsType) => {
   const {sendQuery, totalCount} = props
   const [find, setFind] = useState('Search characters...')
+  const [params, setParams] = useState('')
 
 
   const onChangeHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
     const value = e.target.value
     setFind(value)
+    setParams(value)
     if (value.length > 3) {
-      sendQuery()
+      sendQuery(params)
     }
   }
 
@@ -25,8 +27,8 @@ export const SearchInput = (props: PropsType) => {
       <div className={s.form}>
         <label htmlFor="search-form">Search form</label>
         <input id={"search-form"} className={s.input} type="text" value={find}
-               onChange={onChangeHandler} onFocus={() => setFind("")} />
-        {totalCount !== 0 && <span>Found characters: {totalCount}</span>}
+               onChange={onChangeHandler} onFocus={() => setFind('')} autoFocus/>
+        {totalCount !== null && <span>Found characters: {totalCount}</span>}
       </div>
     </header>
   )
