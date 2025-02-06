@@ -5,8 +5,8 @@
   justify-content: space-between;
   flex-basis: calc(33.333% - 1rem);
   min-width: 250px;
-  min-height: 200px;
-  box-shadow: 0 4px 7px rgba(101, 110, 194, 0.2);
+  min-height: 150px;
+  box-shadow: 0 6px 10px rgba(101, 110, 194, 0.2);
   padding: 1rem;
   box-sizing: border-box;
   color: inherit;
@@ -14,11 +14,17 @@
 
   &:nth-child(1),
   &:nth-child(2) {
-    flex-basis: calc(50% - 1rem);;
+    flex-basis: calc(50% - 1rem);
+
+
+    .title {
+      font-size: 1.875rem;
+    }
   }
 }
 
 .title {
+  font-size: 1.5625rem;
   font-weight: 400;
   margin: 0;
 }
@@ -30,7 +36,14 @@
 
   p {
     margin: 0;
+    font-family: Montserrat, 'serif';
+    font-size: .875rem;
+    color: #5c5c5c;
   };
+
+  span {
+    font-weight: 700;
+  }
 }
 
 .alive {
