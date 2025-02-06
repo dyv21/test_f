@@ -13,7 +13,7 @@ export const SearchResult = (props:SearchResultPropsType) => {
 
   return (
     <main className={s.wrapper}>
-      {status === 'loading' && Array.from({ length: 8 }).fill(null).map(() => <Skeleton/>) }
+      {status === 'loading' && Array.from({ length: 8 }).fill(null).map((_, i) => <Skeleton key={i}/>) }
       {characters && characters.map((character:CharacterType) => <SearchResultItem character={character} key={character.id}/>)}
     </main>
   )
