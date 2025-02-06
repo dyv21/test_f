@@ -12,7 +12,7 @@ function App() {
     <>
       <SearchInput sendQuery={sendQuery} totalCount={totalCount}/>
       {status === 'success' && totalCount === 0 && <h1>Nothing found try again</h1>}
-      {error ? <h1>{error}</h1> : <SearchResult characters={characters}/>}
+      {error ? <h1>{error}</h1> : <SearchResult characters={characters} status={status}/>}
     </>
   )
 }

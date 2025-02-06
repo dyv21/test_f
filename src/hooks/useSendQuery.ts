@@ -1,7 +1,7 @@
 import {useState} from "react"
 import {API} from "../api/api.ts"
 
-type StatusTypes = 'idle' | 'loading' | 'error' | 'success'
+export type StatusTypes = 'idle' | 'loading' | 'error' | 'success'
 
 export const useSendQuery = () => {
   const [characters, setCharacters] = useState([])
