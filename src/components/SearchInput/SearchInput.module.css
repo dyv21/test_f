@@ -10,11 +10,11 @@
   align-items: flex-start;
   justify-content: center;
   gap: 0.5rem;
-  width: 50%;
+  width: 60%;
   height: 100%;
 
   label {
-    visibility: hidden;
+    width: 100%;
   }
 
   span {
