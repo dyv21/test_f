@@ -8,13 +8,13 @@ type PropsType = {
 
 export const SearchInput = (props: PropsType) => {
   const {sendQuery, totalCount} = props
-  const [find, setFind] = useState('Search characters...')
+  const [value, setValue] = useState('Search characters...')
   const [params, setParams] = useState('')
 
 
   const onChangeHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
     const value = e.target.value
-    setFind(value)
+    setValue(value)
     setParams(value)
     if (value.length > 3) {
       sendQuery(params)
@@ -26,8 +26,8 @@ export const SearchInput = (props: PropsType) => {
     <header className={s.wrapper}>
       <div className={s.form}>
         <label htmlFor="search-form">Search form</label>
-        <input id={"search-form"} className={s.input} type="text" value={find}
-               onChange={onChangeHandler} onFocus={() => setFind('')} autoFocus/>
+        <input id={"search-form"} className={s.input} type="text" value={value}
+               onChange={onChangeHandler} onFocus={() => setValue('')} autoFocus/>
         {totalCount !== null && <span>Found characters: {totalCount}</span>}
       </div>
     </header>
