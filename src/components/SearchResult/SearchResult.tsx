@@ -5,7 +5,6 @@ type SearchResultPropsType = {
   characters: CharacterType[]
 }
 
-
 export const SearchResult = (props:SearchResultPropsType) => {
   const {characters} = props
 
