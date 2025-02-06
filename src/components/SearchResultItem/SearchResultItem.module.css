@@ -5,7 +5,7 @@
   justify-content: space-between;
   flex-basis: calc(33.333% - 1rem);
   min-width: 250px;
-  min-height: 150px;
+  min-height: 140px;
   box-shadow: 0 6px 10px rgba(101, 110, 194, 0.2);
   padding: 1rem;
   box-sizing: border-box;
@@ -15,7 +15,7 @@
   &:nth-child(1),
   &:nth-child(2) {
     flex-basis: calc(50% - 1rem);
-
+    min-height: 180px;
 
     .title {
       font-size: 1.875rem;
@@ -39,7 +39,8 @@
     font-family: Montserrat, 'serif';
     font-size: .875rem;
     color: #5c5c5c;
-  };
+  }
+;
 
   span {
     font-weight: 700;
@@ -49,6 +50,46 @@
 .alive {
   color: #267504;
 }
+
 .dead {
   color: #820A0A;
+}
+
+@media screen and (max-width: 845px) {
+  .wrapper {
+    flex-basis: calc(50% - 1rem);
+
+    &:nth-child(1),
+    &:nth-child(2) {
+
+      .title {
+        font-size: 1.2rem;
+      }
+    }
+  }
+
+  .title {
+    font-size: 1rem;
+  }
+
+  .info p {
+    font-size: 1rem;
+
+  }
+}
+
+@media screen and (max-width: 580px) {
+  .wrapper {
+    flex-basis: calc(100% - 1rem);
+
+    &:nth-child(1),
+    &:nth-child(2) {
+      flex-basis: calc(100% - 1rem);
+    }
+  }
+
+  .info p {
+    font-size: .75rem;
+  }
+
 }

@@ -8,8 +8,9 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  justify-content: center;
   gap: 0.5rem;
-  width: 40%;
+  width: 50%;
   height: 100%;
 
   label {
@@ -32,4 +33,18 @@
   border: none;
   box-shadow: 0 4px 7px rgba(101, 110, 194, 0.2);
   padding: 0.6rem 2rem;
+  box-sizing: border-box;
+}
+
+@media screen and (max-width: 845px) {
+  .form {
+    width: 80%;
+  }
+}
+
+@media screen and (max-width: 580px) {
+  .form > span {
+      font-size: 0.75rem
+    }
+
 }
