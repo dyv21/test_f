@@ -1,13 +1,17 @@
 import s from './SearchResult.module.css'
-import {SearchResultItem} from "../SearchResultItem/SearchResultItem.tsx"
+import {CharacterType, SearchResultItem} from "../SearchResultItem/SearchResultItem.tsx"
+
+type SearchResultPropsType = {
+  characters: CharacterType[]
+}
 
 
-export const SearchResult = (props:any) => {
+export const SearchResult = (props:SearchResultPropsType) => {
   const {characters} = props
-  console.log(props)
+
   return (
     <main className={s.wrapper}>
-      {characters && characters.map((character:any) => <SearchResultItem character={character}/>)}
+      {characters && characters.map((character:CharacterType) => <SearchResultItem character={character} key={character.id}/>)}
     </main>
   )
 
