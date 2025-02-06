@@ -20,6 +20,14 @@ export const SearchInput = (props: PropsType) => {
       sendQuery(params)
     }
   }
+  const onKeyDownHandler = (e: React.KeyboardEvent<HTMLInputElement>) => {
+    if (e.key === 'Enter') {
+      sendQuery(params)
+    }
+    if (e.key === 'Escape') {
+      setValue('')
+    }
+  }
 
 
   return (
@@ -27,7 +35,7 @@ export const SearchInput = (props: PropsType) => {
       <div className={s.form}>
         <label htmlFor="search-form">Search form</label>
         <input id={"search-form"} className={s.input} type="text" value={value}
-               onChange={onChangeHandler} onFocus={() => setValue('')} autoFocus/>
+               onChange={onChangeHandler} onFocus={() => setValue('')} onKeyDown={onKeyDownHandler} autoFocus/>
         {totalCount !== null && <span>Found characters: {totalCount}</span>}
       </div>
     </header>
