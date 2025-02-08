@@ -1,4 +1,4 @@
-import {useState} from "react"
+import {useCallback, useState} from "react"
 import {API} from "../api/api.ts"
 
 export type StatusTypes = 'idle' | 'loading' | 'error' | 'success'
@@ -9,7 +9,7 @@ export const useSendQuery = () => {
   const [totalCount, setTotalCount] = useState(null)
   const [status, setStatus] = useState<StatusTypes>('idle')
 
-  const sendQuery = (name: string) => {
+  const sendQuery = useCallback((name: string) => {
 
     setStatus('loading')
     setError(null)
@@ -36,7 +36,7 @@ export const useSendQuery = () => {
         setCharacters([]);
         setStatus('error')
       })
-  }
+  }, [])
 
   return {characters, sendQuery, totalCount, error, status}
 }
