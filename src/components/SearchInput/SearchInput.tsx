@@ -9,20 +9,19 @@ type PropsType = {
 export const SearchInput = (props: PropsType) => {
   const {sendQuery, totalCount} = props
   const [value, setValue] = useState('')
-  const [params, setParams] = useState('')
 
 
   const onChangeHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const value = e.target.value
-    setValue(value)
-    setParams(value)
-    if (value.length > 3) {
-      sendQuery(params)
+    const newValue = e.target.value;
+    setValue(newValue);
+
+    if (newValue.length > 3) {
+      sendQuery(newValue); // ✅ Используем актуальное значение
     }
   }
   const onKeyDownHandler = (e: React.KeyboardEvent<HTMLInputElement>) => {
     if (e.key === 'Enter') {
-      sendQuery(params)
+      sendQuery(value)
     }
     if (e.key === 'Escape') {
       setValue('')
