@@ -34,6 +34,11 @@
   box-shadow: 0 4px 7px rgba(101, 110, 194, 0.2);
   padding: 0.6rem 2rem;
   box-sizing: border-box;
+
+
+  &::placeholder {
+    color: #656EC2;
+  }
 }
 
 @media screen and (max-width: 845px) {

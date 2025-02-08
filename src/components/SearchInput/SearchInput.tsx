@@ -8,7 +8,7 @@ type PropsType = {
 
 export const SearchInput = (props: PropsType) => {
   const {sendQuery, totalCount} = props
-  const [value, setValue] = useState('Search characters...')
+  const [value, setValue] = useState('')
   const [params, setParams] = useState('')
 
 
@@ -37,7 +37,7 @@ export const SearchInput = (props: PropsType) => {
           <input name={"search-form"} id={"search-form"} className={s.input} type="text"
                  value={value}
                  onChange={onChangeHandler} onFocus={() => setValue('')}
-                 onKeyDown={onKeyDownHandler} autoFocus aria-label="Search form"/>
+                 onKeyDown={onKeyDownHandler} autoFocus aria-label="Search form" placeholder="Search characters..."/>
         </label>
 
         {totalCount !== null && <span>Found characters: {totalCount}</span>}
