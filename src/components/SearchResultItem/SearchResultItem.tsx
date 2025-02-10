@@ -1,13 +1,7 @@
 import s from './SearchResultItem.module.css'
 import {dateFormatter} from "../../utils/utils.ts"
+import {CharacterType} from "../../hooks/useSendQuery.ts"
 
-export type CharacterType = {
-  id: number
-  name: string
-  status: string
-  created: string
-  url: string
-}
 
 export type SearchResultItemPropsType = {
   character: CharacterType

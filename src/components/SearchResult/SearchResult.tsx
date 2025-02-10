@@ -1,11 +1,11 @@
 import s from './SearchResult.module.css'
-import {CharacterType, SearchResultItem} from "../SearchResultItem/SearchResultItem.tsx"
 import {Skeleton} from "../Skeleton/Skeleton.tsx"
-import {StatusTypes} from "../../hooks/useSendQuery.ts"
+import {CharacterType, StatusType} from "../../hooks/useSendQuery.ts"
+import {SearchResultItem} from "../SearchResultItem/SearchResultItem.tsx"
 
 type SearchResultPropsType = {
   characters: CharacterType[]
-  status: StatusTypes
+  status: StatusType
 }
 
 export const SearchResult = (props:SearchResultPropsType) => {

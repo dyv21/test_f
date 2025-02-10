@@ -1,13 +1,30 @@
 import {useCallback, useState} from "react"
 import {API} from "../api/api.ts"
 
-export type StatusTypes = 'idle' | 'loading' | 'error' | 'success'
+export type StatusType = 'idle' | 'loading' | 'error' | 'success'
+export type CharacterType = {
+  id: number
+  name: string
+  status: string
+  created: string
+  url: string
+}
 
-export const useSendQuery = () => {
-  const [characters, setCharacters] = useState([])
+type useSendQueryType = {
+  characters: CharacterType[],
+  sendQuery: (name: string) => void,
+  totalCount: number | null
+  error: string | null,
+  status: StatusType
+}
+
+
+
+export const useSendQuery = ():useSendQueryType => {
+  const [characters, setCharacters] = useState<CharacterType[]>([])
   const [error, setError] = useState<string | null>(null)
   const [totalCount, setTotalCount] = useState(null)
-  const [status, setStatus] = useState<StatusTypes>('idle')
+  const [status, setStatus] = useState<StatusType>('idle')
 
   const sendQuery = useCallback((name: string) => {
 
