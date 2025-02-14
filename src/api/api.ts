@@ -1,7 +1,10 @@
 import axios from "axios"
 import {CharacterType} from "../hooks/useSendQuery.ts"
 
-type ResponseType ={
+type ResponseType = {
+  info: {
+    count: number
+  };
   results: CharacterType[];
 }
 

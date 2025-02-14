@@ -18,12 +18,10 @@ type useSendQueryType = {
   status: StatusType
 }
 
-
-
 export const useSendQuery = ():useSendQueryType => {
   const [characters, setCharacters] = useState<CharacterType[]>([])
   const [error, setError] = useState<string | null>(null)
-  const [totalCount, setTotalCount] = useState(null)
+  const [totalCount, setTotalCount] = useState<null | number>(null)
   const [status, setStatus] = useState<StatusType>('idle')
 
   const sendQuery = useCallback((name: string) => {
